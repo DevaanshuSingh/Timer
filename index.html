@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="clock">
+        <div class="time"><span class="min">00</span> : <span class="sec">00</span> </div>
+    </div>
+    <div class="btn-section">
+        <button onclick="start()">Start</button>
+        <button class="stop">Stop</button>
+    </div>
+    <script>
+        let minute = 0;
+        let second = 1;
+        let timer;
+        function start() {
+            alert(`Starting`);
+            let min = document.querySelector('.min');
+            let sec = document.querySelector('.sec');
+            let stop = document.querySelector('.stop');
+            timer = setInterval(function () {
+                if (second == 59) {
+                    minute++;
+                    second = 1;
+                }
+                min.innerHTML = minute;
+                sec.innerHTML = second++;
+            }, 1000);
+            stop.addEventListener('click', function () {
+                clearInterval(timer);
+                minute = 0;
+                second = 0;
+                min.innerHTML = minute;
+                sec.innerHTML = second;
+            });
+        }
+
+    </script>
+    <!-- <script>
+        let minute = 0;
+        let second = 1;
+        let intervalId;
+
+        function start() {
+            alert('Starting');
+            let min = document.querySelector('.min');
+            let sec = document.querySelector('.sec');
+            // Clear any existing interval to avoid multiple timers
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+            // Start a new interval
+            intervalId = setInterval(function () {
+                if (second === 59) {
+                    minute++;
+                    second = 0; // Reset seconds to 0 after 59
+                } else {
+                    second++; // Increment second
+                }
+                // Update the displayed time
+                min.innerHTML = minute.toString().padStart(2, '0'); // Format minutes
+                sec.innerHTML = second.toString().padStart(2, '0'); // Format seconds
+            }, 1000); // Execute every second
+        }
+
+        function stop() {
+            clearInterval(intervalId); // Stop the interval
+            alert('Timer stopped');
+        }
+    </script> -->
+</body>
+
+</html>
