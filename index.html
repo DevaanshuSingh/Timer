@@ -26,27 +26,49 @@
         </div>
     </div>
     <div class="sectionsPart">
-        <div class="timerSection sections">
-            <div class="getLimit">
-                <label for="enter">Enter Limit: </label>
-                <input type="number" class="time" id="enter">
-                <button>Go</button>
+        <div class="both">
+            <div class="timerSection sections">
+                <div class="getLimit">
+                    <label for="enter">Set Timer: </label>
+                    <input type="number" class="time" id="enter">
+                    <button>Go</button>
+                </div>
+                <div class="clock d-flex flex-column col-12">
+                    <div class="clockBdy">
+                        <div class="name">
+                            <div class="showMin"><strong>Min</strong></div>:<div class="showSec"><strong>Sec</strong>
+                            </div>
+                        </div>
+                        <div class="time">
+                            <div class="minTimer col-6"><strong>0</strong></div>:<div class="secTimer col-6">
+                                <strong>0</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnSection">
+                    <button type="button" class="btn btn-dark">START</button>
+                </div>
             </div>
 
-            <div class="clock d-flex flex-column col-12">
-                <div class="name">
-                    Min : Sec
+            <div class="stopWatchSection sections">
+                <div class="clock d-flex flex-column col-12">
+                    <div class="clockBdy">
+                        <div class="name">
+                            <div class="showMin"><strong>Min</strong></div>:<div class="showSec"><strong>Sec</strong>
+                            </div>
+                        </div>
+                        <div class="time">
+                            <div class="minTimer col-6"><strong>0</strong></div>:<div class="secTimer col-6">
+                                <strong>0</strong></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="time d-flex flex-row">
-                    <div class="minTimer col-6">0</div>:<div class="secTimer col-6">0</div>
+                <div class="btnSection">
+                    <button type="button" class="btn btn-dark">START</button>
                 </div>
-            </div>
-            <div class="btnSection">
-                <button type="button" class="btn btn-dark">START</button>
+
             </div>
         </div>
-
-        <div class="stopWatchSection sections"></div>
     </div>
 
     <script>
@@ -84,6 +106,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>
+        let left = document.getElementById("timer");
+        let right = document.getElementById("stopwatch");
+        let leftPart = document.querySelector("timerSection");
+        left.addEventListener("click", function () {
+            leftPart.style.backgroundColor = "green";
+        });
+    </script>
 </body>
 
 </html>
