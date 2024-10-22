@@ -11,8 +11,9 @@
 </head>
 
 <body>
-
-    <div class="choose d-flex flex-column border border-success">
+    <div class="loading"></div>
+    
+    <div class="choose ">
         <h2 class="col-12 heading">WHAT YOU WANT TO USE:</h2>
         <div class="col-12 inputs">
             <div class="form-check col-6">
@@ -53,13 +54,13 @@
             <div class="stopWatchSection sections">
                 <div class="clock d-flex flex-column col-12">
                     <div class="clockBdy">
-                        <div class="name">
-                            <div class="showMin"><strong>Min</strong></div>:<div class="showSec"><strong>Sec</strong>
-                            </div>
+                        <div class="lft">
+                            <div class="t-min">MIN</div>
+                            <div class="min">0</div>
                         </div>
-                        <div class="time">
-                            <div class="minTimer col-6"><strong>0</strong></div>:<div class="secTimer col-6">
-                                <strong>0</strong></div>
+                        <div class="rght">
+                            <div class="t-sec">SEC</div>
+                            <div class="sec">0</div>
                         </div>
                     </div>
                 </div>
@@ -114,6 +115,7 @@
             leftPart.style.backgroundColor = "green";
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
