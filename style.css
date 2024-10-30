@@ -350,7 +350,7 @@ body {
     align-items: center;
     font-size: 2rem;
     font-family: serif;
-    /* display: none; */
+    display: none;
 }
 
 .sectionsPart>.both>.stopWatchSection>.btnSection>.btn{

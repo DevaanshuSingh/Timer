@@ -84,6 +84,7 @@
             secElem.innerHTML=0;
             clearInterval(timer2);
         });
+        
         function button1() {
             let minElem = document.querySelector('.minTimer');
             let secElem = document.querySelector('.secTimer');
@@ -105,7 +106,9 @@
         };
 
         function button2() {
-            alert(`Button2()`);
+            let stopElem = document.querySelector('.stop');
+            stopElem.style.display="flex";
+            // alert(`Button2()`);
             let minElem = document.querySelector('.min');
             let secElem = document.querySelector('.sec');
             let min = 0, sec = 0;
@@ -118,7 +121,6 @@
                 secElem.innerHTML = sec;
                 sec++;
             }, 1000);
-
         };
 
     </script>
