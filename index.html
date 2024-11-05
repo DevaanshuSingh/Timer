@@ -11,8 +11,6 @@
 </head>
 
 <body>
-    <!-- <div class="loading"></div> -->
-
     <div class="choose ">
         <h2 class="col-12 heading">WHAT YOU WANT TO USE:</h2>
         <div class="col-12 inputs">
@@ -68,23 +66,15 @@
                     <button class="stop">STOP TIMER</botton>
                         <button type="button" class="btn btn-dark btn2" onclick="button2()">START</button>
                 </div>
-
             </div>
         </div>
     </div>
     <script>
-        let timer2;
         let minElem = document.querySelector('.min');
         let secElem = document.querySelector('.sec');
-
         let stopWatch = document.querySelector('.stop');
-        stopWatch.addEventListener("click", function () {
-            alert("stoping");
-            minElem.innerHTML=0;
-            secElem.innerHTML=0;
-            clearInterval(timer2);
-        });
-        
+        let timer;
+
         function button1() {
             let minElem = document.querySelector('.minTimer');
             let secElem = document.querySelector('.secTimer');
@@ -104,24 +94,33 @@
             }, 1000);
 
         };
-
         function button2() {
-            let stopElem = document.querySelector('.stop');
-            stopElem.style.display="flex";
-            // alert(`Button2()`);
-            let minElem = document.querySelector('.min');
-            let secElem = document.querySelector('.sec');
-            let min = 0, sec = 0;
-            timer2 = setInterval(function () {
-                if (sec == 2) {
+            alert("2");
+            let min = 0;
+            let sec = 0;
+            stopElem.style.display = "flex";
+            timer = setInterval(function () {
+                alert("ok");    
+                sec++;
+                if (sec === 5) {  // Reset seconds and increment minutes
                     sec = 0;
                     min++;
                 }
                 minElem.innerHTML = min;
                 secElem.innerHTML = sec;
-                sec++;
-            }, 1000);
-        };
+                alert(`min: ${min}, sec: ${sec}`);
+            }, 1000);  // set interval to 1 second
+        }
+
+
+
+        stopWatch.addEventListener("click", function () {
+            alert("stoping");
+            minElem.innerHTML = "0";
+            secElem.innerHTML = "0";
+            clearInterval(timer);
+        });
+
 
     </script>
 

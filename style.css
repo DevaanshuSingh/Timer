@@ -31,6 +31,10 @@ body {
     align-items: center;
 }
 
+*:hover{
+    cursor: url;
+}
+
 .inputs {
     /* height:calc(100%)/2; */
     height: 50%;
@@ -84,9 +88,6 @@ body {
     width: 50%;
     /* border: 1px solid red; */
 }
-
-
-
 
 
 /*LEFT PART*/
